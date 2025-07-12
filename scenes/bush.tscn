@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://bgngijkitd3xn"]
+
+[ext_resource type="Texture2D" uid="uid://dnvh2cv1mhcvg" path="res://assets/sprites/bush.png" id="1_ehqem"]
+[ext_resource type="PackedScene" uid="uid://bdsa80u5kk71u" path="res://scenes/killzone.tscn" id="2_tu87o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehqem"]
+size = Vector2(16, 6)
+
+[node name="bush" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-3.5, -12)
+scale = Vector2(0.78125, 0.75)
+texture = ExtResource("1_ehqem")
+
+[node name="killzone" parent="." instance=ExtResource("2_tu87o")]
+position = Vector2(-4, -5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_ehqem")

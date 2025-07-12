@@ -1,0 +1,103 @@
+[gd_scene load_steps=10 format=3 uid="uid://cqq2pyqyqyn3e"]
+
+[ext_resource type="Script" uid="uid://bj6jwkeceus6" path="res://scripts/ui.gd" id="1_gdt2y"]
+[ext_resource type="Texture2D" uid="uid://dlddh2xds4cy5" path="res://assets/sprites/heart.png" id="1_yev5y"]
+[ext_resource type="FontFile" uid="uid://cii1ovhbhhy27" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_gdt2y"]
+[ext_resource type="Texture2D" uid="uid://cbsi3780n65rg" path="res://assets/sprites/coinsingle.png" id="3_wm3ai"]
+
+[sub_resource type="Theme" id="Theme_8dubc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p7vwb"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Theme" id="Theme_ktti3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cgfq5"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="Theme" id="Theme_7dvkv"]
+
+[node name="UI" type="Node"]
+script = ExtResource("1_gdt2y")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="health" type="Panel" parent="CanvasLayer"]
+offset_right = 118.0
+offset_bottom = 55.0
+
+[node name="texture" type="Panel" parent="CanvasLayer/health"]
+layout_mode = 0
+offset_right = 60.0
+offset_bottom = 56.0
+theme = SubResource("Theme_8dubc")
+theme_override_styles/panel = SubResource("StyleBoxFlat_p7vwb")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/health/texture"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_yev5y")
+expand_mode = 1
+
+[node name="healthcounter" type="Label" parent="CanvasLayer/health"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -66.0
+offset_top = -26.5
+offset_bottom = 27.5
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_gdt2y")
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="coins" type="Panel" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -117.0
+offset_bottom = 53.0
+grow_horizontal = 0
+
+[node name="Panel" type="Panel" parent="CanvasLayer/coins"]
+layout_mode = 0
+offset_right = 58.0
+offset_bottom = 53.0
+theme = SubResource("Theme_ktti3")
+theme_override_styles/panel = SubResource("StyleBoxFlat_cgfq5")
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/coins/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_wm3ai")
+
+[node name="coincounter" type="Label" parent="CanvasLayer/coins"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -59.0
+offset_top = -26.5
+offset_bottom = 26.5
+grow_horizontal = 0
+grow_vertical = 2
+theme = SubResource("Theme_7dvkv")
+theme_override_fonts/font = ExtResource("2_gdt2y")
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
