@@ -17,7 +17,7 @@ var one_dash = true
 func enter()->void:
 	if not parent.taking_damage and not parent.in_air:
 		parent.animated_sprite.play(animation)
-		print("playing animation-"+str(animation))
+		#print("playing animation-"+str(animation))
 
 func exit()->void:
 	pass

@@ -7,7 +7,7 @@ extends state
 
 func enter()->void:
 	super()
-	parent.velocity.x = 0
+	#parent.velocity.x = 0
 	
 func process_input(event:InputEvent)->state:
 	var direction = Input.get_axis("move_left", "move_right")
@@ -19,6 +19,7 @@ func process_input(event:InputEvent)->state:
 	return null
 
 func process_physics(delta:float)->state:
+	parent.velocity.x = move_toward(parent.velocity.x,0,parent.decelaration)
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction != 0:
 		return running_state

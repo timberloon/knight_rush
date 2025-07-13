@@ -7,6 +7,7 @@ class_name player
 @export var health: int
 @onready var coyote: Timer = $coyote_timer
 @onready var state: state = $state
+const default_decel = 100
 
 var dead = false
 var taking_damage = false
@@ -14,6 +15,7 @@ var in_air = false
 var was_on_floor = true
 var coyote_running = false
 var hit_ground = true
+var decelaration = 100
 
 func _ready() -> void:
 	if not dead:

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ba2t80ka6pq42"]
+
+[ext_resource type="Script" uid="uid://dryd1762m6s7v" path="res://scripts/slippery_zone.gd" id="1_qlo0b"]
+
+[node name="slippery_zone" type="Area2D"]
+collision_mask = 3
+script = ExtResource("1_qlo0b")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

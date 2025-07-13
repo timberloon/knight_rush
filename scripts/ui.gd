@@ -1,6 +1,7 @@
 extends Node
 
 var score = 0
+var curr_level:String
 @onready var healthcounter: Label = $CanvasLayer/health/healthcounter
 @onready var coincounter: Label = $CanvasLayer/coins/coincounter
 

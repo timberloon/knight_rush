@@ -14,18 +14,11 @@ func enter()->void:
 
 func process_physics(delta:float)->state:
 	var direction = Input.get_axis("move_left", "move_right")
-	if direction:
-		parent.velocity.x = direction * SPEED
-	else:
-		parent.velocity.x = move_toward(parent.velocity.x, 0, SPEED)
-
-
 	if parent.coyote_running:
 		parent.velocity.y = 0
 		parent.in_air = true
 		jump()
 		print("coyote jump")
-
 
 	if direction and parent.is_on_floor():
 		parent.in_air = false

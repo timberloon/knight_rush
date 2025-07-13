@@ -19,14 +19,15 @@ func process_input(event:InputEvent)->state:
 	
 func process_physics(delta:float)->state:
 	var direction = Input.get_axis("move_left", "move_right")
-	if direction<0:
-		parent.animated_sprite.flip_h = true
-	elif direction>0:
-		parent.animated_sprite.flip_h = false
+	
 	if direction:
+		if direction<0:
+			parent.animated_sprite.flip_h = true
+		elif direction>0:
+			parent.animated_sprite.flip_h = false
 		parent.velocity.x = direction * SPEED
 	else:
-		parent.velocity.x = move_toward(parent.velocity.x, 0, SPEED)
+		parent.velocity.x = move_toward(parent.velocity.x, 0, parent.decelaration)
 	if parent.velocity.x == 0:
 		return idle_state
 	if parent.is_on_floor() and not parent.was_on_floor and Input.is_action_pressed("jump"):
