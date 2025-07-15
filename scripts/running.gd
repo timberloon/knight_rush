@@ -5,11 +5,13 @@ extends state
 @export var jump_state:state
 @export var dash_state:state
 
+var direction:int
+
 func enter()->void:
 	super()
 	
 func process_input(event:InputEvent)->state:
-	if Input.is_action_just_pressed("dash"):
+	if Input.is_action_just_pressed("dash") and direction:
 		one_dash = true
 		return dash_state
 	if Input.is_action_pressed("jump"):
@@ -18,7 +20,7 @@ func process_input(event:InputEvent)->state:
 	return null 
 	
 func process_physics(delta:float)->state:
-	var direction = Input.get_axis("move_left", "move_right")
+	direction = Input.get_axis("move_left", "move_right")
 	
 	if direction:
 		if direction<0:

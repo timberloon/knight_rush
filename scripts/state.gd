@@ -7,7 +7,7 @@ class_name state
 var parent:player
 
 var jump_velocity = -270.0
-var dash_speed = 300
+var dash_speed = 200
 var SPEED = 100
 
 var can_dash = true

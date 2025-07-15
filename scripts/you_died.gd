@@ -2,6 +2,7 @@ extends Control
 
 
 func _on_play_again_pressed() -> void:
+	ui.toggle_visibiltiy()
 	get_tree().change_scene_to_file(ui.curr_level)
 
 func _on_main_menu_pressed() -> void:

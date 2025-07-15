@@ -14,6 +14,11 @@ func enter()->void:
 
 func process_physics(delta:float)->state:
 	var direction = Input.get_axis("move_left", "move_right")
+	if direction:
+		parent.velocity.x = direction*SPEED
+	else:
+		parent.velocity.x = move_toward(parent.velocity.x,0,parent.decelaration)
+	
 	if parent.coyote_running:
 		parent.velocity.y = 0
 		parent.in_air = true
@@ -30,7 +35,6 @@ func process_physics(delta:float)->state:
 
 func process_input(event:InputEvent)->state:
 	if Input.is_action_just_pressed("dash"):
-		one_dash = true
 		return dashing_state
 	return null
 	

@@ -17,23 +17,26 @@ bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="Theme" id="Theme_7dvkv"]
 
-[node name="UI" type="Node"]
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_gdt2y")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="layout" type="CanvasLayer" parent="."]
+visible = false
 
-[node name="health" type="Panel" parent="CanvasLayer"]
+[node name="health" type="Panel" parent="layout"]
 offset_right = 118.0
 offset_bottom = 55.0
 
-[node name="texture" type="Panel" parent="CanvasLayer/health"]
+[node name="texture" type="Panel" parent="layout/health"]
 layout_mode = 0
 offset_right = 60.0
 offset_bottom = 56.0
 theme = SubResource("Theme_8dubc")
 theme_override_styles/panel = SubResource("StyleBoxFlat_p7vwb")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/health/texture"]
+[node name="TextureRect" type="TextureRect" parent="layout/health/texture"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -43,7 +46,7 @@ grow_vertical = 2
 texture = ExtResource("1_yev5y")
 expand_mode = 1
 
-[node name="healthcounter" type="Label" parent="CanvasLayer/health"]
+[node name="healthcounter" type="Label" parent="layout/health"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -60,7 +63,7 @@ text = "3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="coins" type="Panel" parent="CanvasLayer"]
+[node name="coins" type="Panel" parent="layout"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -68,14 +71,14 @@ offset_left = -117.0
 offset_bottom = 53.0
 grow_horizontal = 0
 
-[node name="Panel" type="Panel" parent="CanvasLayer/coins"]
+[node name="Panel" type="Panel" parent="layout/coins"]
 layout_mode = 0
 offset_right = 58.0
 offset_bottom = 53.0
 theme = SubResource("Theme_ktti3")
 theme_override_styles/panel = SubResource("StyleBoxFlat_cgfq5")
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/coins/Panel"]
+[node name="TextureRect" type="TextureRect" parent="layout/coins/Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -84,7 +87,7 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_wm3ai")
 
-[node name="coincounter" type="Label" parent="CanvasLayer/coins"]
+[node name="coincounter" type="Label" parent="layout/coins"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
