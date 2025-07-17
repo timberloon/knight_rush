@@ -33,6 +33,7 @@ func process_physics(delta:float)->state:
 	if parent.velocity.x == 0:
 		return idle_state
 	if parent.is_on_floor() and not parent.was_on_floor and Input.is_action_pressed("jump"):
+		print("buffer jump")
 		return jump_state
 	parent.was_on_floor = parent.is_on_floor()
 	return null

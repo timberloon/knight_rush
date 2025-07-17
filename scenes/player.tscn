@@ -233,7 +233,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"roll",
-"speed": 18.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,

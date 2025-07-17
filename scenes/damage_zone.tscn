@@ -4,6 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://ckwjxj32eclm7" path="res://sounds/hurt.wav" id="2_0k1nd"]
 
 [node name="damage_zone" type="Area2D"]
+collision_mask = 2
 script = ExtResource("1_ppofr")
 
 [node name="damage_sound" type="AudioStreamPlayer2D" parent="."]

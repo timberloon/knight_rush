@@ -15,7 +15,7 @@ var is_dashing = false
 var one_dash = true
 
 func enter()->void:
-	if not parent.taking_damage and not parent.in_air:
+	if not parent.taking_damage:
 		parent.animated_sprite.play(animation)
 		#print("playing animation-"+str(animation))
 

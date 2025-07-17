@@ -31,7 +31,6 @@ func take_damage()->void:
 	cooldown.start()
 
 func die()->void:
-	ui.dead()
 	playr.dead = true
 	damage_sound.play()
 	playr.animated_sprite.play("death")
