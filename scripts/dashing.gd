@@ -11,8 +11,6 @@ extends state
 var direction:int
 
 func enter():
-	print("dash in")
-	super()
 	direction = Input.get_axis("move_left", "move_right")
 	if can_dash and one_dash:
 		parent.velocity.x = direction * dash_speed
@@ -22,9 +20,8 @@ func enter():
 		can_dash = false
 		dash_cooldown.start()
 		dash_time.start()
-
-func exit()->void:
-	print("dash out")
+	if parent.velocity.x != 0:super()
+	
 
 func process_physics(delta:float)->state:
 	if is_dashing:
@@ -40,9 +37,8 @@ func process_input(event:InputEvent)->state:
 		return jumping_state
 	return null
 
-func _on_dash_time_timeout() -> state:
+func _on_dash_time_timeout() -> void:
 	is_dashing = false
 	can_dash = false
-	return running_state
 func _on_dash_cooldown_timeout() -> void:
 	can_dash = true

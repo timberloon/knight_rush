@@ -11,7 +11,7 @@ func enter()->void:
 	super()
 	
 func process_input(event:InputEvent)->state:
-	if Input.is_action_just_pressed("dash") and direction:
+	if Input.is_action_just_pressed("dash") and parent.velocity.x != 0:
 		one_dash = true
 		return dash_state
 	if Input.is_action_pressed("jump"):

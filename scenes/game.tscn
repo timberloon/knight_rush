@@ -513,7 +513,6 @@ position = Vector2(2856, -603)
 
 [node name="damage_zone" parent="killzones" instance=ExtResource("13_trtic")]
 position = Vector2(-278, 309)
-collision_mask = 2
 damage = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/damage_zone"]
@@ -522,7 +521,6 @@ shape = SubResource("RectangleShape2D_ir15t")
 
 [node name="damage_zone2" parent="killzones" instance=ExtResource("13_trtic")]
 position = Vector2(275, 88)
-collision_mask = 2
 damage = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/damage_zone2"]
@@ -531,7 +529,6 @@ shape = SubResource("RectangleShape2D_ca42v")
 
 [node name="damage_zone3" parent="killzones" instance=ExtResource("13_trtic")]
 position = Vector2(1960, -258)
-collision_mask = 2
 damage = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/damage_zone3"]
@@ -539,7 +536,6 @@ shape = SubResource("RectangleShape2D_rysoc")
 
 [node name="damage_zone4" parent="killzones" instance=ExtResource("13_trtic")]
 position = Vector2(2614, -102)
-collision_mask = 2
 damage = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="killzones/damage_zone4"]
